@@ -50,13 +50,14 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
-app.use(tommy);
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({limit: '15mb'}));
 
 
-app.listen(5000, function () {
-    console.log('Started  HTTP server on ' + 5000);
-});
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
+app.listen(port, ipaddress, function() {
+    tommy();
+});
