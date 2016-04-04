@@ -4,7 +4,7 @@ var express = require('express');
 var SlackClient = require('slack-client');
 
 
-var tommy = function(){
+var tommy = function () {
 
     var slackClient = new SlackClient('xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t');
 
@@ -20,7 +20,7 @@ var tommy = function(){
     });
 
     slackClient.on('message', function (message) {
-        if (message.user == bot.id) {
+        if (message.user === bot.id) {
             return;
         } // Ignore bot's own messages
 
@@ -33,7 +33,6 @@ var tommy = function(){
     slackClient.login();
 
 };
-
 
 
 var express = require('express');
@@ -57,12 +56,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({limit: '15mb'}));
 
 
-if (process.argv[2] === 'debug') {
-    process.env.NODE_VERBOSE = true;
-}
-
-
-app.listen(function () {
-    console.log('Started  HTTP server on ' + app.get('port'));
+app.listen(5000, function () {
+    console.log('Started  HTTP server on ' + 5000);
 });
 
