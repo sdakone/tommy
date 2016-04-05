@@ -4,24 +4,27 @@ var slackClient = require('slack-client');
 var RtmClient = slackClient.RtmClient;
 var RTM_EVENTS = slackClient.RTM_EVENTS;
 
+var messagesLimit = 10;
 var channels = {
-    tombot: 'C0XNDQLE7'
+    tombot: 'C0XNDQLE7',
+    general: 'C0WS5Q31N'
 };
 
 var token = process.env.SLACK_API_TOKEN || 'xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t';
-var rtm = new RtmClient(token, {logLevel: 'debug'});
+var rtm = new RtmClient(token);
 rtm.start();
 
+var messageCount = 0;
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
-    console.log('Message:', message);
-    console.log(message.channel === channels.tombot);
+    messageCount++;
+    var channelId = message.channel;
+    console.log(channelId);
+    if (channelId === channels.general && messageCount === messagesLimit) {
 
-    if (message.channel === channels.tombot) {
-        console.log('sending message');
-        var channel = rtm.getChannelGroupOrDMByID(message.channel);
-        console.log(channel);
-        channel.send('Non ho capito! :/');
+        messageCount = 0;
+        rtm.sendMessage('Non ho capito! :/',channelId);
+
     }
 });
 
