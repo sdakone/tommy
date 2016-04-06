@@ -2,7 +2,7 @@
 
 var nextLimit = function () {
 
-    return parseInt((Math.random() * 10) + 5, 10);
+    return parseInt((Math.random() * 5) + 5, 10);
 
 };
 
