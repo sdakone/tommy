@@ -37,7 +37,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             messageCount = 0;
             messagesLimit = nextLimit();
             rtm.sendMessage('Next message in.... ' + messagesLimit, channels.tombot);
-            rtm.sendMessage('Non ho capito! :/', channelId);
+            rtm.sendMessage('Non ho capito! :confused:', channelId);
 
         }
 
