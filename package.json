@@ -1,4 +1,12 @@
 {
+
+  "name": "tommy-bot",
+  "version": "1.0.0",
+  "description": "A simple Slack bot using NodeJS",
+  "main": "slack.js",
+  "scripts": {
+    "start": "node slack.js"
+  },
   "dependencies": {
     "body-parser": "^1.15.0",
     "cors": "^2.7.1",
