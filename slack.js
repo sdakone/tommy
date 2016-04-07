@@ -31,6 +31,10 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
 
+    if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
+        rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
+    }
+
     if (channelId === channels.general) {
         messageCount++;
 
