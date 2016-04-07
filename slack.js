@@ -24,7 +24,6 @@ rtm.start();
 
 rtm.on(RTM_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {
 
-    console.log('Next message in ' + messagesLimit);
     rtm.sendMessage('Next message in.... ' + messagesLimit + ':+1::skin-tone-2:', channels.tombot);
 
 });
