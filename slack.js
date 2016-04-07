@@ -22,8 +22,12 @@ var messageCount = 0;
 
 rtm.start();
 
-console.log('Next message in ' + messagesLimit);
-rtm.sendMessage('Next message in ' + messagesLimit, channels.tombot);
+rtm.on('authenticated', function handleRtmMessage() {
+
+    console.log('Next message in ' + messagesLimit);
+    rtm.sendMessage('Next message in.... ' + messagesLimit + ':+1::skin-tone-2:', channels.tombot);
+
+});
 
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
