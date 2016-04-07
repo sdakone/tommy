@@ -31,7 +31,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
 
-    if (channelId === channels.tombot) {
+    if (channelId === channels.general) {
         messageCount++;
 
         if (messageCount === messagesLimit) {
