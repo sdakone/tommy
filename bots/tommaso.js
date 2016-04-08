@@ -33,10 +33,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
         if (randomvalue%2==0) {
             rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
-        }else{
+        }
+        /*else{
             rtm.sendMessage('<@' + message.user + '> pito', channelId);
             rtm.sendMessage('<@' + message.user + '> minchia', channelId);
-        };
+        }*/
       
    
     }
