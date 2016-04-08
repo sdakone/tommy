@@ -40,7 +40,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             break;
             
             case 2:
-            rtm.sendMessage('kitinnipari? <@' + message.user + '>, channelId);
+            rtm.sendMessage('kitinnipari? <@' + message.user + '>', channelId);
             break;
 
             case 3:
