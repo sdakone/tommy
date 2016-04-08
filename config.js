@@ -6,7 +6,8 @@ module.exports =
     },
 
     bots: {
-        tommaso: 'xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t'
+        tommaso: 'xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t',
+        berni:   'xoxb-33093322389-R6FufLMkMixrkwwA8G66k8Ad'
     }
 
 };

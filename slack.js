@@ -6,9 +6,17 @@ for (var bot in config.bots) {
 
     if (config.bots.hasOwnProperty(bot)) {
 
-        var rtmBot = require('./bots/' + bot);
+        try {
 
-        rtmBot.start();
+            var rtmBot = require('./bots/' + bot);
+
+            rtmBot.start();
+
+        } catch (error) {
+
+            console.log('bot ' + bot + ' not found');
+
+        }
 
     }
 }
