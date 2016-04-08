@@ -59,7 +59,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
 
                 }
-          //  }, timeoutValue ;
+          /*  }, timeoutValue ;*/
         }
 
         //risposte varie
