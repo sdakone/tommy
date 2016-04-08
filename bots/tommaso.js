@@ -21,7 +21,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
 
-    if (message.subtype === RTM_EVENTS.MESSAGE_CHANGED) {
+    if (message.subtype === RTM_EVENTS.MESSAGE_SUBTYPES.MESSAGE_CHANGED) {
 
         rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
 
