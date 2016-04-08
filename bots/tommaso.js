@@ -16,6 +16,7 @@ var rtm = new RtmClient(config.bots.tommaso);
 
 var messagesLimit = nextLimit();
 var messageCount = 0;
+var randomValue =0;
 
 rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {
 
@@ -28,7 +29,16 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     var channelId = message.channel;
 
     if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
-        rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
+        randomValue=nextLimit();
+
+        if (randomvalue%2) {
+            rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
+        }else{
+            rtm.sendMessage('<@' + message.user + '> pito', channelId);
+            rtm.sendMessage('<@' + message.user + '> minchia', channelId);
+        };
+      
+   
     }
 
     if (channelId === config.channels.general) {
