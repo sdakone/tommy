@@ -8,6 +8,8 @@ http.createServer(function () {}).listen(process.env.PORT || 5000);
 
 var botsDir = path.join(__dirname, './bots');
 
+console.log('bot dir ', botsDir);
+
 fs.readdir(botsDir, function (error, files) {
 
     for (var i = 0; i < files.length; i++) {
