@@ -31,16 +31,16 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         switch (randomValue % 8)
         {
             case 0:
-            rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
+            rtm.sendMessage('comu sini?', channelId);
             break;
 
             case 1:
-            rtm.sendMessage('<@' + message.user + '> pito', channelId);
-            rtm.sendMessage('<@' + message.user + '> minchia', channelId);
+            rtm.sendMessage('pito', channelId);
+            rtm.sendMessage('minchia', channelId);
             break;
 
             default:
-            rtm.sendMessage('<@' + message.user + '> in bokka al lupo per la vita', channelId);
+            rtm.sendMessage('in bokka al lupo per la vita', channelId);
 
 
         }
