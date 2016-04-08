@@ -31,7 +31,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
         randomValue=nextLimit();
 
-        if (randomvalue%2) {
+        if (randomvalue%2==0) {
             rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
         }else{
             rtm.sendMessage('<@' + message.user + '> pito', channelId);
