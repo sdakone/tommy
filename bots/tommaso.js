@@ -10,6 +10,7 @@ var config = require('./../config');
 var slackClient = require('slack-client');
 var RtmClient = slackClient.RtmClient;
 var RTM_EVENTS = slackClient.RTM_EVENTS;
+var RTM_MESSAGE_SUBTYPES = slackClient.RTM_MESSAGE_SUBTYPES;
 var token = 'xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t';
 
 var rtm = new RtmClient(token);
@@ -21,7 +22,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
 
-    if (message.subtype === RTM_EVENTS.MESSAGE_SUBTYPES.MESSAGE_CHANGED) {
+    if (message.subtype === RTM_MESSAGE_SUBTYPES.MESSAGE_CHANGED) {
 
         rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
 
