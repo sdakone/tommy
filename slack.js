@@ -1,10 +1,11 @@
-'use strict';
 
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
 http.createServer(function () {}).listen(process.env.PORT || 5000);
+
+'use strict';
 
 var botsDir = path.join(__dirname, './bots');
 
