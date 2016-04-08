@@ -33,7 +33,8 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
             var randomValue = 0;
              randomValue = nextLimit();
-            
+            var timeoutValue = Math.floor((Math.random()*5000)+1001);
+
              setTimeout(function(){
                 switch (randomValue % 5)
                 {
@@ -59,8 +60,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
 
                 }
-    ​   
-            }, Math.floor((Math.random()*5000)+1001);
+            }, timeoutValue ;
         }
 
         //risposte varie
