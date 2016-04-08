@@ -23,7 +23,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     }
 
 if (message.subtype=='message_changed') {
-       
+        
 
     }else{
 
