@@ -1,11 +1,12 @@
+http = require 'http'
+handle = (req, res) -> res.end "hit"
+
+server = http.createServer handle
+
+server.listen process.env.PORT || 5000
+
+
 'use strict';
-
-
-var cool = require('cool-ascii-faces');
-var express = require('express');
-var app = express();
-
-app.set('port', (process.env.PORT || 5000));
 
 
 var nextLimit = function () {
