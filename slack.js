@@ -1,5 +1,3 @@
-socket = io.listen(process.env.PORT);
-
 'use strict';
 
 
