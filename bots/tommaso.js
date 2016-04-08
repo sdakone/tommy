@@ -14,9 +14,9 @@ var CLIENT_EVENTS = slackClient.CLIENT_EVENTS.RTM;
 var token = 'xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t';
 
 var rtm = new RtmClient(token);
-
 var messagesLimit = nextLimit();
 var messageCount = 0;
+
 
 //messaggi
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
@@ -55,9 +55,25 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     }
 
     if (message.text.indexOf('bye') !== -1) {
-        rtm.sendMessage('in gambissima, byeeee <@' + message.user + '>', channelId);
+        rtm.sendMessage('in gambissima, byeeee', channelId);
 
     }
+
+    if (message.text.indexOf('ciao') !== -1) {
+        rtm.sendMessage('Ciau', channelId);
+
+    }
+
+    if (message.text.indexOf('suca modena') !== -1) {
+        rtm.sendMessage('Suca modena', channelId);
+
+    }
+
+    if (message.edited !== null) {
+        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
+
+    }
+
 
     if (channelId === config.channels.general) {
         messageCount++;
