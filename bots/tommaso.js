@@ -36,15 +36,16 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             
             rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
             
-        } else {
-            
-            rtm.sendMessage('<@' + message.user + '> pito', channelId,function(){
-
-                rtm.sendMessage('<@' + message.user + '> minchia', channelId);
-                
-            });
-            
-        }
+        } 
+        // else {
+        //    
+        //     rtm.sendMessage('<@' + message.user + '> pito', channelId,function(){
+        //
+        //         rtm.sendMessage('<@' + message.user + '> minchia', channelId);
+        //        
+        //     });
+        //    
+        // }
         
     }
 
