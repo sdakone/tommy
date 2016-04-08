@@ -31,12 +31,20 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         switch (randomValue % 8)
         {
             case 0:
-            rtm.sendMessage('comu sini?', channelId);
+            rtm.sendMessage(<@' + message.user + '>'comu sini?', channelId);
             break;
 
             case 1:
             rtm.sendMessage('pito', channelId);
             rtm.sendMessage('minchia', channelId);
+            break;
+            
+            case 2:
+            rtm.sendMessage('kitinnipari? '<@' + message.user + '>, channelId);
+            break;
+
+            case 3:
+            rtm.sendMessage('mi presti neuru e nta pausa pranzu tu tonnu?', channelId);
             break;
 
             default:
