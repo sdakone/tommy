@@ -11,12 +11,12 @@ var slackClient = require('slack-client');
 var RtmClient = slackClient.RtmClient;
 var RTM_EVENTS = slackClient.RTM_EVENTS;
 var CLIENT_EVENTS = slackClient.CLIENT_EVENTS.RTM;
+var token = 'xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t';
 
-var rtm = new RtmClient(config.bots.tommaso);
+var rtm = new RtmClient(token);
 
 var messagesLimit = nextLimit();
 var messageCount = 0;
-var randomValue =0;
 
 rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {
 
@@ -29,10 +29,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     var channelId = message.channel;
 
     if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
-       var randomValue=nextLimit();
 
 
-        switch (randomvalue%8)
+    var randomValue = nextLimit();
+
+        switch (randomvalue % 8)
         {
             case 0:
             rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
@@ -49,7 +50,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
         }
       
-   
+
     }
 
     if (channelId === config.channels.general) {
