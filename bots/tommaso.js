@@ -71,7 +71,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     console.log('edited:', message.edited);
 
-    if (!!message.edited) {
+    if (message.subtype=='message_changed') {
         rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...'+ message.edited(), channelId);
 
     }
