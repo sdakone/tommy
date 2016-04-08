@@ -23,7 +23,7 @@ var messageCount = 0;
 
 rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {
 
-    rtm.sendMessage('Next message in.... ' + messagesLimit + ' :+1::skin-tone-3:', channels.tombot);
+    rtm.sendMessage('Next message in. ' + messagesLimit + ' :+1::skin-tone-3:', channels.tombot);
 
 });
 
