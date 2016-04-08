@@ -28,7 +28,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     var randomValue = 0;
      randomValue = nextLimit();
 
-        switch (randomvalue % 8)
+        switch (randomValue % 8)
         {
             case 0:
             rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
