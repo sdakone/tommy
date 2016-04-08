@@ -9,14 +9,17 @@ var token = 'xoxb-33093322389-R6FufLMkMixrkwwA8G66k8Ad';
 
 var rtm = new RtmClient(token);
 
-rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {
-
-    rtm.sendMessage('Minchia Willy, ti spacco!', config.channels.tombot);
-
-});
+rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {});
 
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
+    var dice = Math.floor(Math.random() * 12) + 1;
+
+    if (dice % 12 === 0){
+
+        rtm.sendMessage('Minchia <@' + message.user + '>, ti spacco!', message.channel);
+
+    }
 
 });
 
