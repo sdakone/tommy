@@ -18,25 +18,25 @@ var rtm = new RtmClient(token);
 var messagesLimit = nextLimit();
 var messageCount = 0;
 
+//messaggi
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
 
+    //messaggi personali
     if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
-
-
     var randomValue = 0;
      randomValue = nextLimit();
 
-        switch (randomValue % 8)
+        switch (randomValue % 5)
         {
             case 0:
             rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
             break;
 
             case 1:
-            rtm.sendMessage('pito', channelId);
-            rtm.sendMessage('minchia', channelId);
+            rtm.sendMessage('pito!', channelId);
+            rtm.sendMessage('minchia...', channelId);
             break;
             
             case 2:
@@ -52,6 +52,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
 
         }
+    }
+
+    if (message.text.indexOf('bye') !== -1) {
+        rtm.sendMessage('in gambissima, byeeee <@' + message.user + '>', channelId);
+
     }
 
     if (channelId === config.channels.general) {
