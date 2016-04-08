@@ -33,38 +33,35 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
             var randomValue = 0;
              randomValue = nextLimit();
-             setTimeout(function(){
-    ​
-            switch (randomValue % 5)
-            {
-                case 0:
-                rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
-                break;
-
-                case 1:
-                rtm.sendMessage('pito!', channelId);
-                rtm.sendMessage('minchia...', channelId);
-                break;
-                
-                case 2:
-                rtm.sendMessage('kitinnipari? <@' + message.user + '>', channelId);
-                break;
-
-                case 3:
-                rtm.sendMessage('mi presti neuru e nta pausa pranzu tu tonnu?', channelId);
-                break;
-
-                default:
-                rtm.sendMessage('in bokka al lupo per la vita', channelId);
-
-
-            }
-    ​   
-            }, Math.floor((Math.random()*5000)+1001)
             
+             setTimeout(function(){
+                switch (randomValue % 5)
+                {
+                    case 0:
+                    rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
+                    break;
+
+                    case 1:
+                    rtm.sendMessage('pito!', channelId);
+                    rtm.sendMessage('minchia...', channelId);
+                    break;
+                    
+                    case 2:
+                    rtm.sendMessage('kitinnipari? <@' + message.user + '>', channelId);
+                    break;
+
+                    case 3:
+                    rtm.sendMessage('mi presti neuru e nta pausa pranzu tu tonnu?', channelId);
+                    break;
+
+                    default:
+                    rtm.sendMessage('in bokka al lupo per la vita', channelId);
+
+
+                }
+    ​   
+            }, Math.floor((Math.random()*5000)+1001);
         }
-
-
 
         //risposte varie
         if (message.text.indexOf('bye') !== -1) {
