@@ -4,7 +4,7 @@
   "description": "A simple Slack bot using NodeJS",
   "main": "slack.js",
   "scripts": {
-    "start": "node slack.js"
+    "start": "PORT=23948 node slack.js"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
