@@ -31,9 +31,10 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     //messaggi personali
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
-        var randomValue = 0;
-         randomValue = nextLimit();
-         sleep(3000);
+            var randomValue = 0;
+             randomValue = nextLimit();
+             setTimeout(function(){
+    ​
             switch (randomValue % 5)
             {
                 case 0:
@@ -58,7 +59,13 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
 
             }
+    ​   
+            }, Math.floor((Math.random()*5000)+1001)
+            
         }
+
+
+
         //risposte varie
         if (message.text.indexOf('bye') !== -1) {
             rtm.sendMessage('in gambissima, byeeee', channelId);
