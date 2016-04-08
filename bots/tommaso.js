@@ -30,23 +30,27 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
-        var randomValue = nextLimit();
 
-        if (randomValue % 2 === 0) {
-            
+    var randomValue = nextLimit();
+
+        switch (randomvalue % 8)
+        {
+            case 0:
             rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
-            
-        } 
-        // else {
-        //    
-        //     rtm.sendMessage('<@' + message.user + '> pito', channelId,function(){
-        //
-        //         rtm.sendMessage('<@' + message.user + '> minchia', channelId);
-        //        
-        //     });
-        //    
-        // }
-        
+            break;
+
+            case 1:
+            rtm.sendMessage('<@' + message.user + '> pito', channelId);
+            rtm.sendMessage('<@' + message.user + '> minchia', channelId);
+            break;
+
+            default:
+            rtm.sendMessage('<@' + message.user + '> in bokka al lupo per la vita', channelId);
+
+
+        }
+      
+
     }
 
     if (channelId === config.channels.general) {
