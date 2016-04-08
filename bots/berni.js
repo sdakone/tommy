@@ -21,11 +21,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     }
 
-    
-    if (message.text.indexOf('suca modena') !== -1) {
+
+   /* if (message.text.indexOf('suca modena') !== -1) {
         rtm.sendMessage('Suca modena', channelId);
 
-    }
+    }*/
 
 });
 
