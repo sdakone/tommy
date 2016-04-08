@@ -23,7 +23,6 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
 
-    console.log('edited:', message.edited);
 
     if (message.subtype=='message_changed') {
         rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
@@ -34,7 +33,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
         var randomValue = 0;
          randomValue = nextLimit();
-
+         sleep(3000);
             switch (randomValue % 5)
             {
                 case 0:
