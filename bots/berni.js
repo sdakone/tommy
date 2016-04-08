@@ -13,6 +13,7 @@ rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {});
 
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
+    var channelId = message.channel;
     var dice = Math.floor(Math.random() * 12) + 1;
 
     if (dice % 12 === 0){
@@ -22,7 +23,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     }
 
 if (message.subtype=='message_changed') {
-        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
+       
 
     }else{
 
