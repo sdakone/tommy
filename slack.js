@@ -1,28 +1,22 @@
-var http = require('http');
-
-var server = http.createServer(function(req, res) {
-
-}).listen(process.env.PORT || 5000);
-
 'use strict';
 
-var config = require('./config');
+var http = require('http');
+var fs = require('fs');
 
-for (var bot in config.bots) {
+http.createServer(function () {}).listen(process.env.PORT || 5000);
 
-    if (config.bots.hasOwnProperty(bot)) {
+var botsDir = './bots';
 
-        try {
+fs.readdir(botsDir, function (error, files) {
 
-            var rtmBot = require('./bots/' + bot);
+    for (var i = 0; i < files.length; i++) {
+        
+        var bot = files[i];
+        var rtmBot = require('./bots/' + bot);
 
-            rtmBot.start();
-
-        } catch (error) {
-
-            console.log('bot ' + bot + ' not found');
-
-        }
-
+        rtmBot.start();
+        console.log('Starting ',bot,' bot...');
+        
     }
-}
+    
+});
