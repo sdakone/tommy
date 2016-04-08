@@ -25,7 +25,8 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
 
-    var randomValue = nextLimit();
+    var randomValue = 0;
+     randomValue = nextLimit();
 
         switch (randomvalue % 8)
         {
