@@ -29,7 +29,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     var channelId = message.channel;
 
     if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
-        randomValue=nextLimit();
+       var randomValue=nextLimit();
 
         if (randomvalue%2==0) {
             rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
