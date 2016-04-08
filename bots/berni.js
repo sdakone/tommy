@@ -21,11 +21,16 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     }
 
+if (message.subtype=='message_changed') {
+        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
 
-    /*if (message.text.indexOf('suca modena') !== -1) {
-        rtm.sendMessage('Suca modena', channelId);
+    }else{
 
-    }*/
+	    if (message.text.indexOf('suca modena') !== -1) {
+	        rtm.sendMessage('Suca modena', channelId);
+
+	    }
+	}
 
 });
 

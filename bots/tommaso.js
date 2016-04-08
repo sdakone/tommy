@@ -26,63 +26,60 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     console.log('edited:', message.edited);
 
     if (message.subtype=='message_changed') {
-        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...'+ message.edited(), channelId);
+        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
 
-    }
+    }else{
 
     //messaggi personali
-    if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
-    var randomValue = 0;
-     randomValue = nextLimit();
+        if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
+        var randomValue = 0;
+         randomValue = nextLimit();
 
-        switch (randomValue % 5)
-        {
-            case 0:
-            rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
-            break;
+            switch (randomValue % 5)
+            {
+                case 0:
+                rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
+                break;
 
-            case 1:
-            rtm.sendMessage('pito!', channelId);
-            rtm.sendMessage('minchia...', channelId);
-            break;
-            
-            case 2:
-            rtm.sendMessage('kitinnipari? <@' + message.user + '>', channelId);
-            break;
+                case 1:
+                rtm.sendMessage('pito!', channelId);
+                rtm.sendMessage('minchia...', channelId);
+                break;
+                
+                case 2:
+                rtm.sendMessage('kitinnipari? <@' + message.user + '>', channelId);
+                break;
 
-            case 3:
-            rtm.sendMessage('mi presti neuru e nta pausa pranzu tu tonnu?', channelId);
-            break;
+                case 3:
+                rtm.sendMessage('mi presti neuru e nta pausa pranzu tu tonnu?', channelId);
+                break;
 
-            default:
-            rtm.sendMessage('in bokka al lupo per la vita', channelId);
+                default:
+                rtm.sendMessage('in bokka al lupo per la vita', channelId);
 
+
+            }
+        }
+        //risposte varie
+        if (message.text.indexOf('bye') !== -1) {
+            rtm.sendMessage('in gambissima, byeeee', channelId);
 
         }
-    }
 
-    if (message.text.indexOf('bye') !== -1) {
-        rtm.sendMessage('in gambissima, byeeee', channelId);
+        if (message.text.indexOf('ciao') !== -1) {
+            rtm.sendMessage('Ciau', channelId);
 
-    }
+        }
 
-    if (message.text.indexOf('ciao') !== -1) {
-        rtm.sendMessage('Ciau', channelId);
+        if (message.text.indexOf('suca modena') !== -1) {
+            rtm.sendMessage('Suca modena', channelId);
 
-    }
+        }
 
-    if (message.text.indexOf('suca modena') !== -1) {
-        rtm.sendMessage('Suca modena', channelId);
 
     }
 
-    console.log('edited:', message.edited);
-
-    if (message.subtype=='message_changed') {
-        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...'+ message.edited(), channelId);
-
-    }
-
+   
 
     if (channelId === config.channels.general) {
         messageCount++;
