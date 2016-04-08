@@ -18,12 +18,6 @@ var rtm = new RtmClient(token);
 var messagesLimit = nextLimit();
 var messageCount = 0;
 
-rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {
-
-    rtm.sendMessage('Next message in. ' + messagesLimit + ' :+1::skin-tone-3:', config.channels.tombot);
-
-});
-
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
@@ -49,20 +43,15 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
 
         }
-      
-
     }
 
     if (channelId === config.channels.general) {
         messageCount++;
 
         if (messageCount === messagesLimit) {
-
             messageCount = 0;
             messagesLimit = nextLimit();
-            rtm.sendMessage('Next message in.... ' + messagesLimit + ' :+1::skin-tone-2:', config.channels.tombot);
             rtm.sendMessage('Non ho capito! :confused:', channelId);
-
         }
 
     }
