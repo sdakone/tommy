@@ -69,8 +69,8 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     }
 
-    if (message.edited !== null) {
-        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
+    if (message.edited() != null) {
+        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...'+ message.edited(), channelId);
 
     }
 
