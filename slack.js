@@ -1,9 +1,15 @@
+'use strict';
 
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
-http.createServer(function () {}).listen(process.env.PORT || 5000);
+http.createServer(function (req, res) {
+
+    res.writeHead(200);
+    res.end('Hello, World!\n');
+
+}).listen(process.env.PORT || 5000);
 
 'use strict';
 
