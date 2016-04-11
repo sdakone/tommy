@@ -3,6 +3,7 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
+var ping = require('net-ping');
 
 http.createServer(function (req, res) {
 
@@ -10,8 +11,6 @@ http.createServer(function (req, res) {
     res.end('Hello, World!\n');
 
 }).listen(process.env.PORT || 5000);
-
-'use strict';
 
 var botsDir = path.join(__dirname, './bots');
 
@@ -30,3 +29,20 @@ fs.readdir(botsDir, function (error, files) {
     }
 
 });
+
+var session = ping.createSession();
+var target = 'http://protected-tundra-78518.herokuapp.com';
+
+setInterval(function () {
+
+    session.pingHost(target, function (error, target) {
+        if (error) {
+            console.log(target + ': ' + error.toString());
+        } else {
+            console.log(target + ': Alive');
+        }
+    });
+
+}, 1000 * 60 * 2);
+
+
