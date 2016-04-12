@@ -30,19 +30,4 @@ fs.readdir(botsDir, function (error, files) {
 
 });
 
-var session = ping.createSession();
-var target = 'http://protected-tundra-78518.herokuapp.com';
-
-setInterval(function () {
-
-    session.pingHost(target, function (error, target) {
-        if (error) {
-            console.log(target + ': ' + error.toString());
-        } else {
-            console.log(target + ': Alive');
-        }
-    });
-
-}, 1000 * 60 * 2);
-
 
