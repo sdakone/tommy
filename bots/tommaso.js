@@ -76,8 +76,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             rtm.sendMessage('Suca modena', channelId);
 
         }
-
-
+        
     }
 
 

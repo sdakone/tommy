@@ -3,7 +3,7 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
-var ping = require('net-ping');
+var request = require('request');
 
 http.createServer(function (req, res) {
 
@@ -29,5 +29,15 @@ fs.readdir(botsDir, function (error, files) {
     }
 
 });
+
+var target = 'http://protected-tundra-78518.herokuapp.com';
+
+setInterval(function () {
+
+    request(target, function () {
+        console.log(new Date().toString());
+    });
+
+}, 1000 * 60 * 2);
 
 

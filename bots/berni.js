@@ -16,22 +16,22 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     var channelId = message.channel;
     var dice = Math.floor(Math.random() * 12) + 1;
 
-    if (dice % 12 === 0){
+    if (dice % 12 === 0) {
 
         rtm.sendMessage('Minchia <@' + message.user + '>, ti spacco!', message.channel);
 
     }
 
-if (message.subtype=='message_changed') {
-        
+    if (message.subtype === 'message_changed') {
 
-    }else{
 
-	    if (message.text.indexOf('suca modena') !== -1) {
-	        rtm.sendMessage('Suca modena', channelId);
+    } else {
 
-	    }
-	}
+        if (message.text.indexOf('suca modena') !== -1) {
+            rtm.sendMessage('Suca modena', channelId);
+
+        }
+    }
 
 });
 
