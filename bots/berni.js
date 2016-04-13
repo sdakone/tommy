@@ -16,13 +16,13 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     var channelId = message.channel;
     var dice = Math.floor(Math.random() * 24) + 1;
 
-    if (dice % 24 === 0) {
+    if (dice % 24 === 0 || message.text.indexOf('berniTest')) {
 
         var text = 'Minchia <@' + message.user + '>, ti spacco!';
 
         if (message.text && message.text.length) {
 
-            var regexp = new RegExp('\s(.*?)mi\s');
+            var regexp = new RegExp('([A-Za-z]*?)mi\\s');
             var textMatch = message.text.match(regexp);
 
             if (textMatch.length > 1) {
