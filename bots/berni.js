@@ -22,7 +22,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
         if (message.text && message.text.length) {
 
-            var regexp = new RegExp('([A-Za-z]*?)mi\\s');
+            var regexp = new RegExp('([A-Za-z]*?)mi(\\s|$)');
             var textMatch = message.text.match(regexp);
 
             if (textMatch && textMatch.length > 1) {
