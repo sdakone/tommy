@@ -25,7 +25,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             var regexp = new RegExp('([A-Za-z]*?)mi\\s');
             var textMatch = message.text.match(regexp);
 
-            if (textMatch.length > 1) {
+            if (textMatch && textMatch.length > 1) {
 
                 text = textMatch[1] + 'milano' + ' :trollface:';
 
