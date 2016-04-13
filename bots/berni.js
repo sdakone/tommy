@@ -16,7 +16,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     var channelId = message.channel;
     var dice = Math.floor(Math.random() * 24) + 1;
 
-    if (dice % 24 === 0 || message.text.indexOf('berniTest')) {
+    if (dice % 24 === 0 || message.text.indexOf('berniTest') !== -1) {
 
         var text = 'Minchia <@' + message.user + '>, ti spacco!';
 
