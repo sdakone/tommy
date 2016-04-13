@@ -32,7 +32,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
             if (message.text.indexOf('lunedì') !== -1){
-                rtm.sendMessage('Buon lunedì, stronzi!', channelId);
+                rtm.sendMessage('Buon lunedì, stronzi!', 'C0WS5Q31N');
             }else{
 
                  var randomValue = nextLimit();
