@@ -14,18 +14,30 @@ rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {});
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
-    var dice = Math.floor(Math.random() * 12) + 1;
+    var dice = Math.floor(Math.random() * 24) + 1;
 
-    if (dice % 12 === 0) {
+    if (dice % 24 === 0) {
 
-        rtm.sendMessage('Minchia <@' + message.user + '>, ti spacco!', message.channel);
+        var text = 'Minchia <@' + message.user + '>, ti spacco!';
+
+        if (message.text && message.text.length) {
+
+            var regexp = new RegExp('\s(.*?)mi\s');
+            var textMatch = message.text.match(regexp);
+
+            if (textMatch.length > 1) {
+
+                text = textMatch[1] + 'milano' + ' :trollface:';
+
+            }
+
+        }
+
+        rtm.sendMessage(text, message.channel);
 
     }
 
-    if (message.subtype === 'message_changed') {
-
-
-    } else {
+    if (message.subtype !== 'message_changed') {
 
         if (message.text.indexOf('suca modena') !== -1) {
             rtm.sendMessage('Suca modena', channelId);
