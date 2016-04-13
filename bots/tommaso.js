@@ -31,11 +31,15 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         //messaggi personali
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
-            var randomValue = nextLimit();
+            if (message.text.indexOf('lunedì') !== -1){
+                rtm.sendMessage('Buon lunedì, stronzi!', channelId);
+            }else{
 
-            var timeoutValue = Math.floor((Math.random() * 5000) + 1001);
+                 var randomValue = nextLimit();
 
-            setTimeout(function () {
+                 var timeoutValue = Math.floor((Math.random() * 5000) + 1001);
+
+                 setTimeout(function () {
                 switch (randomValue % 5) {
                     case 0:
                         rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
@@ -57,8 +61,12 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
                     default:
                         rtm.sendMessage('in bokka al lupo per la vita', channelId);
 
-                }
-            }, timeoutValue);
+                   }
+                }, timeoutValue);
+
+            }
+
+           
         }
 
         //risposte varie
