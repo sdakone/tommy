@@ -33,7 +33,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
     } else {
 
         //messaggi personali
-        if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
+        if (message.text && message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
             if (message.text.indexOf('lunedì') !== -1) {
 
