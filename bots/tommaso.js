@@ -36,7 +36,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
             if (message.text.indexOf('lunedì') !== -1) {
-                
+
                 rtm.sendMessage('Buon lunedì, stronzi!', config.channels.general);
 
             } else {
@@ -48,7 +48,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
                 setTimeout(function () {
                     switch (randomValue % 5) {
                         case 0:
-                            rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
+                            rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
                             break;
 
                         case 1:
