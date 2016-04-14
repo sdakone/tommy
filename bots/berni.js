@@ -11,6 +11,39 @@ var rtm = new RtmClient(token);
 
 rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {});
 
+function checkMilano(message) {
+
+    var text = null;
+    var regexp = new RegExp('([A-Za-z]*?)mi(\\s|$)');
+    var textMatch = message.text.match(regexp);
+
+    if (textMatch && textMatch.length > 1) {
+
+        text = textMatch[1] + 'milano' + ' :trollface:';
+
+    }
+
+    return text;
+
+}
+
+function checkShit(message) {
+
+    var text = null;
+    var problem = new RegExp('problem');
+    var bug = new RegExp('bug');
+    var textMatch = problem.test(message.text) || bug.test(message.text);
+
+    if (textMatch) {
+
+        text = 'meeeeeeerda!';
+
+    }
+
+    return text;
+
+}
+
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
@@ -22,19 +55,20 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
         if (message.text && message.text.length) {
 
-            var regexp = new RegExp('([A-Za-z]*?)mi(\\s|$)');
-            var textMatch = message.text.match(regexp);
+            var milano = checkMilano(message);
 
-            if (textMatch && textMatch.length > 1) {
-
-                text = textMatch[1] + 'milano' + ' :trollface:';
-
-            }
+            text = milano || text;
 
         }
 
         rtm.sendMessage(text, message.channel);
 
+    }
+
+    var shit = checkShit(message);
+
+    if (shit) {
+        rtm.sendMessage(shit, message.channel);
     }
 
     if (message.subtype !== 'message_changed') {

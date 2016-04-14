@@ -24,49 +24,55 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     if (message.subtype === RTM_MESSAGE_SUBTYPES.MESSAGE_CHANGED) {
 
-        rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
+        var dice = Math.floor(Math.random() * 24) + 1;
+
+        if (dice % 24 === 0){
+            rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
+        }
 
     } else {
 
         //messaggi personali
         if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
-            if (message.text.indexOf('lunedì') !== -1){
-                rtm.sendMessage('Buon lunedì, stronzi!', 'C0WS5Q31N');
-            }else{
+            if (message.text.indexOf('lunedì') !== -1) {
+                
+                rtm.sendMessage('Buon lunedì, stronzi!', config.channels.general);
 
-                 var randomValue = nextLimit();
+            } else {
 
-                 var timeoutValue = Math.floor((Math.random() * 5000) + 1001);
+                var randomValue = nextLimit();
 
-                 setTimeout(function () {
-                switch (randomValue % 5) {
-                    case 0:
-                        rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
-                        break;
+                var timeoutValue = Math.floor((Math.random() * 5000) + 1001);
 
-                    case 1:
-                        rtm.sendMessage('pito!', channelId);
-                        rtm.sendMessage('minchia...', channelId);
-                        break;
+                setTimeout(function () {
+                    switch (randomValue % 5) {
+                        case 0:
+                            rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
+                            break;
 
-                    case 2:
-                        rtm.sendMessage('kitinnipari? <@' + message.user + '>', channelId);
-                        break;
+                        case 1:
+                            rtm.sendMessage('pito!', channelId);
+                            rtm.sendMessage('minchia...', channelId);
+                            break;
 
-                    case 3:
-                        rtm.sendMessage('mi presti neuru e nta pausa pranzu tu tonnu?', channelId);
-                        break;
+                        case 2:
+                            rtm.sendMessage('kitinnipari? <@' + message.user + '>', channelId);
+                            break;
 
-                    default:
-                        rtm.sendMessage('in bokka al lupo per la vita', channelId);
+                        case 3:
+                            rtm.sendMessage('mi presti neuru e nta pausa pranzu tu tonnu?', channelId);
+                            break;
 
-                   }
+                        default:
+                            rtm.sendMessage('in bokka al lupo per la vita', channelId);
+
+                    }
                 }, timeoutValue);
 
             }
 
-           
+
         }
 
         //risposte varie
@@ -84,7 +90,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             rtm.sendMessage('Suca modena', channelId);
 
         }
-        
+
     }
 
 
