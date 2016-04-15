@@ -2,7 +2,7 @@
 
 var nextLimit = function () {
 
-    return parseInt((Math.random() * 5) + 5, 10);
+    return parseInt((Math.random() * 30) + 30, 10);
 
 };
 
@@ -14,19 +14,18 @@ var RTM_MESSAGE_SUBTYPES = slackClient.RTM_MESSAGE_SUBTYPES;
 var token = 'xoxb-31735152998-FyaXBNNVWzJ02aqkbqpWtp5t';
 
 var rtm = new RtmClient(token);
-var messagesLimit = nextLimit();
-var messageCount = 0;
 
 //messaggi
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
+    var dice = 0;
 
     if (message.subtype === RTM_MESSAGE_SUBTYPES.MESSAGE_CHANGED) {
 
-        var dice = Math.floor(Math.random() * 24) + 1;
+        dice = Math.floor(Math.random() * 24) + 1;
 
-        if (dice % 24 === 0){
+        if (dice % 24 === 0) {
             rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
         }
 
@@ -95,11 +94,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
 
     if (channelId === config.channels.general) {
-        messageCount++;
 
-        if (messageCount === messagesLimit) {
-            messageCount = 0;
-            messagesLimit = nextLimit();
+        dice = Math.floor(Math.random() * 48) + 1;
+
+        if (dice % 48 === 0) {
+
             rtm.sendMessage('Non ho capito! :confused:', channelId);
         }
 
