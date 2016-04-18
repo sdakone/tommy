@@ -2,7 +2,7 @@
 
 var nextLimit = function () {
 
-    return parseInt((Math.random() * 5) + 5, 10);
+    return parseInt((Math.random() * 30) + 30, 10);
 
 };
 
@@ -16,29 +16,28 @@ var token = process.env[‘SLACK_BOT_TOMMASO_TOKEN’];
 
 
 var rtm = new RtmClient(token);
-var messagesLimit = nextLimit();
-var messageCount = 0;
 
 //messaggi
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
+    var dice = 0;
 
     if (message.subtype === RTM_MESSAGE_SUBTYPES.MESSAGE_CHANGED) {
 
-        var dice = Math.floor(Math.random() * 24) + 1;
+        dice = Math.floor(Math.random() * 24) + 1;
 
-        if (dice % 24 === 0){
+        if (dice % 24 === 0) {
             rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
         }
 
     } else {
 
         //messaggi personali
-        if (message.text.indexOf('<@U0XMM4GVC>') !== -1) {
+        if (message.text && message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
             if (message.text.indexOf('lunedì') !== -1) {
-                
+
                 rtm.sendMessage('Buon lunedì, stronzi!', config.channels.general);
 
             } else {
@@ -50,7 +49,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
                 setTimeout(function () {
                     switch (randomValue % 5) {
                         case 0:
-                            rtm.sendMessage('<@' + message.user + '>comu sini?', channelId);
+                            rtm.sendMessage('<@' + message.user + '> comu sini?', channelId);
                             break;
 
                         case 1:
@@ -97,11 +96,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
 
     if (channelId === config.channels.general) {
-        messageCount++;
 
-        if (messageCount === messagesLimit) {
-            messageCount = 0;
-            messagesLimit = nextLimit();
+        dice = Math.floor(Math.random() * 48) + 1;
+
+        if (dice % 48 === 0) {
+
             rtm.sendMessage('Non ho capito! :confused:', channelId);
         }
 
