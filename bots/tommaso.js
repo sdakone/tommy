@@ -11,7 +11,7 @@ var slackClient = require('slack-client');
 var RtmClient = slackClient.RtmClient;
 var RTM_EVENTS = slackClient.RTM_EVENTS;
 var RTM_MESSAGE_SUBTYPES = slackClient.RTM_MESSAGE_SUBTYPES;
-var token = process.env[‘SLACK_BOT_TOMMASO_TOKEN’];
+var token = process.env.SLACK_BOT_TOMMASO_TOKEN;
 
 
 
