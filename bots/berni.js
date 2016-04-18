@@ -5,7 +5,7 @@ var slackClient = require('slack-client');
 var RtmClient = slackClient.RtmClient;
 var RTM_EVENTS = slackClient.RTM_EVENTS;
 var CLIENT_EVENTS = slackClient.CLIENT_EVENTS.RTM;
-var token = 'xoxb-33093322389-R6FufLMkMixrkwwA8G66k8Ad';
+var token = process.env[‘SLACK_BOT_BERNI_TOKEN’];
 
 var rtm = new RtmClient(token);
 
