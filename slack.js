@@ -22,7 +22,7 @@ fs.readdir(botsDir, function (error, files) {
 
         var bot = files[i];
         var rtmBot = require('./bots/' + bot);
-
+    
         rtmBot.start();
         console.log('Starting ', bot, ' bot...');
 
