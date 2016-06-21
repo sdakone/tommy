@@ -14,7 +14,7 @@ rtm.on(CLIENT_EVENTS.RTM_CONNECTION_OPENED, function handleRtmMessage() {});
 function checkMilano(message) {
 
     var text = null;
-    var regexp = new RegExp('([A-Za-z]*?)mi(\\s|$)');
+    var regexp = new RegExp('([A-Za-z]+?)mi(\\s|$)');
     var textMatch = message.text.match(regexp);
 
     if (textMatch && textMatch.length > 1) {
@@ -47,9 +47,9 @@ function checkShit(message) {
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     var channelId = message.channel;
-    var dice = Math.floor(Math.random() * 24) + 1;
+    var dice = Math.floor(Math.random() * 80) + 1;
 
-    if (dice % 24 === 0 || (message.text && message.text.indexOf('berniTest') !== -1)) {
+    if (dice % 80 === 0 || (message.text && message.text.indexOf('berniTest') !== -1)) {
 
         var text = 'Minchia <@' + message.user + '>, ti spacco!';
 
