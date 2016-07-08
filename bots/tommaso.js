@@ -25,9 +25,9 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     if (message.subtype === RTM_MESSAGE_SUBTYPES.MESSAGE_CHANGED) {
 
-        dice = Math.floor(Math.random() * 24) + 1;
+        dice = Math.floor(Math.random() * 80) + 1;
 
-        if (dice % 24 === 0) {
+        if (dice % 80 === 0) {
             rtm.sendMessage('Pecchè hai mudificato il testoo? Non capisco...', channelId);
         }
 
@@ -102,9 +102,9 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
     if (channelId === config.channels.general) {
 
-        dice = Math.floor(Math.random() * 48) + 1;
+        dice = Math.floor(Math.random() * 80) + 1;
 
-        if (dice % 48 === 0) {
+        if (dice % 80 === 0) {
 
             rtm.sendMessage('Non ho capito! :confused:', channelId);
         }
