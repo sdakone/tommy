@@ -39,7 +39,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             if (message.text.indexOf('ripeti') !== -1) {
                 var str = message.text;
                 var n = str.lastIndexOf('ripeti');
-                var result = str.substring(n + 1);
+                var result = str.substring(n + 6);
 
                 rtm.sendMessage( result, config.channels.general);
 
