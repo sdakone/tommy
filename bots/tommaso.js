@@ -37,8 +37,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         if (message.text && message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
             if (message.text.indexOf('ripeti') !== -1) {
+                var str = message.text;
+                var n = str.lastIndexOf('ripeti');
+                var result = str.substring(n + 1);
 
-                rtm.sendMessage( message.text.replace("@U0XMM4GVC: ripeti", " ") , config.channels.general);
+                rtm.sendMessage( result, config.channels.general);
 
             } else
             if (message.text.indexOf('lunedì') !== -1) {
