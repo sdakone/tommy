@@ -38,7 +38,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
 
             if (message.text.indexOf('ripeti') !== -1) {
 
-                rtm.sendMessage( message.text.replace("@tommaso: ripeti", " ") , config.channels.general);
+                rtm.sendMessage( message.text.replace("@U0XMM4GVC: ripeti", " ") , config.channels.general);
 
             } else
             if (message.text.indexOf('lunedì') !== -1) {
