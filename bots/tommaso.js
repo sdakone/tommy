@@ -36,6 +36,11 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
         //messaggi personali
         if (message.text && message.text.indexOf('<@U0XMM4GVC>') !== -1) {
 
+            if (message.text.indexOf('ripeti') !== -1) {
+
+                rtm.sendMessage(message.text, config.channels.general);
+
+            } else
             if (message.text.indexOf('lunedì') !== -1) {
 
                 rtm.sendMessage('Buon lunedì, stronzi!', config.channels.general);
